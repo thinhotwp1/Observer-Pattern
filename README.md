@@ -1,5 +1,3 @@
-Link github: https://github.com/thinhotwp1/Observer-Pattern.git
-Link bài viết chương 2:  Chương 2: Observer Pattern (Người quan sát)
 Link drive:  https://docs.google.com/document/d/1S-JXrjglPbQ7pDbBFYs3d6Malo_ULCgNc_ZG7u9sIVY/edit?usp=sharing
 
 
