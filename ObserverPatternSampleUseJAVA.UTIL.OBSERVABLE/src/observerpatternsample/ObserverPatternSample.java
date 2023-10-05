@@ -4,36 +4,28 @@
  */
 package observerpatternsample;
 
-import java.util.Observer;
-import observerpatternsample.display.CurrentConditionsDisplay;
-import observerpatternsample.display.ForecastDisplay;
-import observerpatternsample.display.StaticsDisplay;
-import observerpatternsample.subject.WeatherData;
+import observerpatternsample.model.VideoUpload;
+import observerpatternsample.channel.YoutubeChannel;
+import observerpatternsample.service.Subscriber;
 
-/**
- *
- * @author Administrator
- */
+import java.util.Date;
+
 public class ObserverPatternSample {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
-        WeatherData weatherData = new WeatherData();
-        Observer currentDisplay = new CurrentConditionsDisplay(weatherData);
-        Observer forecastDisplay = new ForecastDisplay(weatherData);
-        Observer staticsDisplay = new StaticsDisplay(weatherData);
-        
-        
-        System.out.println("================ START ================");
-        System.out.println("FIRST TIME");
-        weatherData.setMeasurements(25, 50, 5);
-        System.out.println("AFTER UPDATE");
-        weatherData.deleteObserver(forecastDisplay); // hủy đăng kí của forecastDisplay
-        weatherData.setMeasurements(40, 40, 10);
-        System.out.println("================ END ================");
+        // Khai báo youtube channel
+        YoutubeChannel youtubeChannel = new YoutubeChannel("Thinh Youtube");
+
+        // Khai báo người đăng ký youtube channel "Thinh Youtube"
+        Subscriber subscriber = new Subscriber(youtubeChannel);
+
+        System.out.println("------------------------------- START -------------------------------");
+
+        // Upload video mới, nếu đánh dấu star thì sẽ tự động gửi thông báo tới người đăng ký.
+        VideoUpload doraemonSpecial = new VideoUpload("Tập doraemon đặc biệt !", "Một ngày sinh nhật rỗng túi của suneo ", new Date(), true);
+        youtubeChannel.uploadVideo(doraemonSpecial);
+
+        System.out.println("-------------------------------- END --------------------------------");
     }
-    
+
 }
