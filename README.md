@@ -10,4 +10,4 @@
 
 :accessibility: Khi có video mới được kênh youtube(publisher) đăng lên thì người đăng ký kênh(subscriber) sẽ được thông báo rằng có video mới và thực hiện hành vi của mình.  
 
-Too eassy !!!
+Soo eassy !!!
